@@ -394,9 +394,21 @@ const Index = () => {
         <html lang="en" data-theme={theme} />
       </Helmet>
       <div className="w-full lg:w-1/3">
-        <h1 className="my-12 mt-6 text-5xl font-extrabold italic">
-          <a href={siteUrl}>{siteTitle}</a>
-        </h1>
+        <div style={{
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://haowallpaper.com/link/common/file/previewFileImg/17193585581477248")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          padding: '30px',
+          borderRadius: '12px',
+          margin: '24px 0',
+          width: '100%',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)'
+        }}>
+          <h1 className="text-5xl font-extrabold italic m-0">
+            <a href={siteUrl} style={{ color: '#fbbf24', textDecoration: 'none' }}>{siteTitle}</a>
+          </h1>
+        </div>
         {(viewState.zoom ?? 0) <= 3 && IS_CHINESE ? (
           <LocationStat
             changeYear={changeYear}
