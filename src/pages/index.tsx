@@ -394,21 +394,25 @@ const Index = () => {
         <html lang="en" data-theme={theme} />
       </Helmet>
       <div className="w-full lg:w-1/3">
+        {/* === 修改的地方在这里开始 === */}
+        {/* 1. 顶部合照横幅 (无遮罩，纯图片) */}
         <div style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://haowallpaper.com/link/common/file/previewFileImg/17193585581477248")',
+          backgroundImage: 'url("https://haowallpaper.com/link/common/file/previewFileImg/17193585581477248")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          padding: '30px',
+          height: '160px',
           borderRadius: '12px',
-          margin: '24px 0',
+          margin: '24px 0 16px 0',
           width: '100%',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)'
-        }}>
-          <h1 className="text-5xl font-extrabold italic m-0">
-            <a href={siteUrl} style={{ color: '#fbbf24', textDecoration: 'none' }}>{siteTitle}</a>
-          </h1>
-        </div>
+        }}></div>
+
+        {/* 2. 干净的标题 */}
+        <h1 className="mb-8 text-5xl font-extrabold italic">
+          <a href={siteUrl}>{siteTitle}</a>
+        </h1>
+        {/* === 修改的地方在这里结束 === */}
+        
         {(viewState.zoom ?? 0) <= 3 && IS_CHINESE ? (
           <LocationStat
             changeYear={changeYear}
